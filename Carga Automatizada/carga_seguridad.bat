@@ -1,4 +1,4 @@
-cd C:\Users\Ramon Decena\Documents\Tesis Diana 2021\Codigo
+cd C:\Users\Usuario\Documents\tesis-codigo\Carga Automatizada
 
 carga_seguridad.py
 

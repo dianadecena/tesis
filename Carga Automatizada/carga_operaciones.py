@@ -8,21 +8,18 @@ def obtenerArchivos(ruta):
 			tipo_indicador = ruta.split("/")
 			path = ruta+fichero.name
 			mostrarErrores(path)
-			if tipo_indicador[8] == "Impresiones":
+			if tipo_indicador[7] == "Impresiones":
 				guardarDatos(2, 'operaciones', path)
-			elif tipo_indicador[8] == "Servidores Disponibles":
-				guardarDatosVar(2, 'operaciones', path, 'id_servidor', 'ser_op')
-			elif tipo_indicador[8] == "Tickets Abiertos":
-				guardarDatosVar(2, 'operaciones', path, 'id_ticket', 'ticket_op')
-			elif tipo_indicador[8] == "Tickets Cerrados":
-				guardarCerrados(2, 'operaciones', 'id_operaciones', True, path)
-			elif tipo_indicador[8] == "Sensores Operativos":
+			elif tipo_indicador[7] == "Servidores Disponibles":
+				guardarDatosVar(2, 'operaciones', path, 'id_servidor', 'op_servidor')
+			elif tipo_indicador[7] == "Tickets Abiertos":
+				guardarDatosVar(2, 'operaciones', path, 'id_ticket', 'op_ticket')
+			elif tipo_indicador[7] == "Tickets Cerrados":
+				guardarCerrados(2, 'operaciones', True, path)
+			elif tipo_indicador[7] == "Sensores Operativos":
 				guardarDatos(2, 'operaciones', path)
-			elif tipo_indicador[8] == "Sensores con Fallas":
+			elif tipo_indicador[7] == "Sensores con Fallas":
 				guardarDatos(2, 'operaciones', path)
-			else:
-				guardarDatosVar(2, 'operaciones', path, 'id_usuario', 'us_op')
-				
 
 def mostrarErrores(path):
 	df = pd.read_excel(path, engine='openpyxl')
@@ -86,9 +83,9 @@ def errorArchivo(tipo):
 		tipo_error = 'valores nulos y negativos y filas iguales'
 	print("Se detectó un error en el archivo: "+tipo_error) 
 
-nombres_indicadores = ["Impresiones", "Sensores Operativos", "Tickets Abiertos", "Servidores Disponibles", "Satisfaccion Usuarios", "Sensores con Fallas", "Tickets Cerrados"]
+nombres_indicadores = ["Impresiones", "Sensores Operativos", "Tickets Abiertos", "Servidores Disponibles", "Sensores con Fallas", "Tickets Cerrados"]
 
 for nombre in nombres_indicadores:
-	ruta = "/Users/Usuario/Documents/Tesis Diana 2021/Codigo/Datos de Prueba/Operaciones/"+nombre+"/"
+	ruta = "/Users/Usuario/Documents/Tesis Diana 2021/Codigo/Indicadores de Operaciones/"+nombre+"/"
 	obtenerArchivos(ruta)
 print("Los datos se han guardado correctamente en la base de datos") 

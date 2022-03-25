@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>proceso_etl_tiempo</name>
+    <name>proceso_etl_tiempo_aut</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -567,7 +567,7 @@
     <hop>
       <from>Select values 4</from>
       <to>tiempo-mensual</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Select values 2</from>
@@ -597,6 +597,11 @@
     <hop>
       <from>Select values 3</from>
       <to>tiempo-diario</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>CSV file input</from>
+      <to>indicador</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1105,10 +1110,11 @@
       <schema_name/>
     </partitioning>
     <connection>tesis_db</connection>
-    <sql>SELECT * FROM dato_indicador WHERE EXTRACT(MONTH FROM fecha) = 4
-AND EXTRACT(YEAR FROM fecha) = 2022;</sql>
+    <sql>SELECT * FROM dato_indicador WHERE EXTRACT(MONTH FROM fecha) = ?
+AND EXTRACT(YEAR FROM fecha) = ?;
+</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup>CSV file input</lookup>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
@@ -1233,7 +1239,7 @@ AND EXTRACT(YEAR FROM fecha) = 2022;</sql>
       <schema_name/>
     </partitioning>
     <connection>tesis_db</connection>
-    <sql>SELECT * FROM dato_indicador WHERE EXTRACT(MONTH FROM fecha) = 4
+    <sql>SELECT * FROM dato_indicador WHERE EXTRACT(MONTH FROM fecha) = 3
 AND EXTRACT(YEAR FROM fecha) = 2022;</sql>
     <limit>0</limit>
     <lookup/>
@@ -1434,6 +1440,69 @@ AND EXTRACT(YEAR FROM fecha) = 2022;</sql>
     <GUI>
       <xloc>704</xloc>
       <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CSV file input</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>C:\Users\Usuario\Documents\tesis-codigo (extendido)\ETL\tiempo_datos.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <format>mixed</format>
+    <encoding/>
+    <fields>
+      <field>
+        <name>EXTRACT(MONTH FROM fecha)</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>Bs.S.</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>EXTRACT(YEAR FROM fecha)</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>Bs.S.</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>48</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

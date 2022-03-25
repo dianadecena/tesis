@@ -3213,7 +3213,7 @@ id_caso = 5 or id_caso = 8;</sql>
       <schema_name/>
     </partitioning>
     <connection>tesis_dw</connection>
-    <sql>SELECT * FROM tiempo_mensual WHERE id_mes = 2 AND year = 2022;</sql>
+    <sql>SELECT * FROM tiempo_mensual WHERE id_mes = 1 AND year = 2022;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -3317,7 +3317,7 @@ id_caso = 5 or id_caso = 8;</sql>
       <schema_name/>
     </partitioning>
     <connection>tesis_dw</connection>
-    <sql>SELECT * FROM tiempo_mensual WHERE id_mes = 2 AND year = 2022;</sql>
+    <sql>SELECT * FROM tiempo_mensual WHERE id_mes = 1 AND year = 2022;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

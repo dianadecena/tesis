@@ -5,15 +5,9 @@ import pandas as pd
 def obtenerArchivos(ruta):
 	with os.scandir(ruta) as ficheros:
 		for fichero in ficheros:
-			tipo_indicador = ruta.split("/")
 			path = ruta+fichero.name
 			mostrarErrores(path)
-			if tipo_indicador[7] == "Ataques Bloqueados":
-				guardarDatosVar(3, 'seguridad', path, 'id_ataque', 'seg_ataque')
-			elif tipo_indicador[7] == "Incidentes":
-				guardarDatosVar(3, 'seguridad', path, 'id_incidente', 'seg_incidente')
-			elif tipo_indicador[7] == "Cambios":
-				guardarDatosVar(3, 'seguridad', path, 'id_cambios', 'seg_cambios')
+			guardarDatosVar(3, 'seguridad', path, 'id_usuario', 'seg_us')
 
 def mostrarErrores(path):
 	df = pd.read_excel(path, engine='openpyxl')
@@ -77,10 +71,9 @@ def errorArchivo(tipo):
 		tipo_error = 'valores nulos y negativos y filas iguales'
 	print("Se detectó un error en el archivo: "+tipo_error) 
 
-nombres_indicadores = ["Ataques Bloqueados", "Incidentes", "Cambios"]
+nombres_indicadores = ["Satisfaccion Usuarios"]
 
 for nombre in nombres_indicadores:
-	ruta = "/Users/Usuario/Documents/Tesis Diana 2021/Codigo/Indicadores de Seguridad/"+nombre+"/"
+	ruta = "/Users/Usuario/Documents/Tesis Diana 2021/Codigo/Satisfaccion Usuarios/Seguridad/"+nombre+"/"
 	obtenerArchivos(ruta)
 print("Los datos se han guardado correctamente en la base de datos") 
-

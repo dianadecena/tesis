@@ -2,8 +2,7 @@ import psycopg2
 from sqlalchemy import create_engine
 import pandas as pd
 
-
-def guardarCerrados(num_area, area, id_area, ticket, archivo):
+def guardarCerrados(num_area, area, ticket, archivo):
         connection = conectarBD()
         df = pd.read_excel(archivo, engine='openpyxl')
         ultimo_ind = selectUltimoInd(connection)
@@ -73,6 +72,7 @@ def selectIndicador(num_area, connection, ultimo_ind, df_area):
         try:
             nuevo_df.to_sql(tabla_area, con=connection[1], if_exists='append', index=False)
         except Exception as e: 
+            print(e)
             alertaError()
   
 def selectVariable(query, connection, s_variable):
@@ -81,7 +81,7 @@ def selectVariable(query, connection, s_variable):
             cur.execute(query %s_variable)
         except Exception as e:
             connection.commit()
-            alertaError()
+            print('Error:', e)
         else:
             records = cur.fetchall()
             cur.close()
@@ -93,7 +93,7 @@ def select(query, connection):
             cur.execute(query)
         except Exception as e:
             connection.commit()
-            alertaError()
+            print('Error:', e)
         else:
             records = cur.fetchall()
             cur.close()
@@ -168,8 +168,8 @@ def guardarInd(connection, df):
             alertaError()
 
 def alertaError():
-    print("No ha sido posible guardar los datos en la base de datos porque no poseen el formato correcto") 
-
+        print("No ha sido posible guardar los datos en la base de datos porque no poseen el formato correcto") 
+        
 def conectarBD():
         host='localhost'
         user ='postgres'
@@ -181,4 +181,3 @@ def conectarBD():
         engine = create_engine(db_connection)
 
         return [connection, engine]
-

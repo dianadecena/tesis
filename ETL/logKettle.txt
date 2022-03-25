@@ -1,0 +1,50 @@
+2022/03/20 14:49:59 - Transformation - Using run configuration [Pentaho local]
+2022/03/20 14:49:59 - Transformation - Running transformation using the Kettle execution engine
+2022/03/20 14:49:59 - proceso_etl_tiempo - Dispatching started for transformation [proceso_etl_tiempo]
+2022/03/20 14:50:00 - CSV file input.0 - Header row skipped in file 'C:\Users\Usuario\Documents\tesis-codigo (extendido)\ETL\tiempo_datos.csv'
+2022/03/20 14:50:00 - CSV file input.0 - Finished processing (I=2, O=0, R=0, W=1, U=0, E=0)
+2022/03/20 14:50:00 - indicador 2.0 - !TableInput.Log.FinishedReadingQuery!
+2022/03/20 14:50:00 - indicador.0 - !TableInput.Log.FinishedReadingQuery!
+2022/03/20 14:50:00 - indicador.0 - Finished processing (I=255, O=0, R=1, W=255, U=0, E=0)
+2022/03/20 14:50:00 - Calculator.0 - Finished processing (I=0, O=0, R=255, W=255, U=0, E=0)
+2022/03/20 14:50:00 - Select values.0 - Finished processing (I=0, O=0, R=255, W=255, U=0, E=0)
+2022/03/20 14:50:00 - Sort rows .0 - Finished processing (I=0, O=0, R=255, W=255, U=0, E=0)
+2022/03/20 14:50:00 - Unique rows 2.0 - Finished processing (I=0, O=0, R=255, W=30, U=0, E=0)
+2022/03/20 14:50:00 - Select values 3.0 - Finished processing (I=0, O=0, R=30, W=30, U=0, E=0)
+2022/03/20 14:57:34 - Transformation - Using run configuration [Pentaho local]
+2022/03/20 14:57:35 - Transformation - Running transformation using the Kettle execution engine
+2022/03/20 14:57:35 - proceso_etl_tiempo - Dispatching started for transformation [proceso_etl_tiempo]
+2022/03/20 14:57:36 - CSV file input.0 - Header row skipped in file 'C:\Users\Usuario\Documents\tesis-codigo (extendido)\ETL\tiempo_datos.csv'
+2022/03/20 14:57:36 - CSV file input.0 - Finished processing (I=2, O=0, R=0, W=1, U=0, E=0)
+2022/03/20 14:57:36 - indicador 2.0 - !TableInput.Log.FinishedReadingQuery!
+2022/03/20 14:57:36 - indicador.0 - !TableInput.Log.FinishedReadingQuery!
+2022/03/20 14:57:36 - indicador.0 - Finished processing (I=255, O=0, R=1, W=255, U=0, E=0)
+2022/03/20 14:57:36 - Calculator.0 - Finished processing (I=0, O=0, R=255, W=255, U=0, E=0)
+2022/03/20 14:57:36 - Select values.0 - Finished processing (I=0, O=0, R=255, W=255, U=0, E=0)
+2022/03/20 14:57:36 - Sort rows .0 - Finished processing (I=0, O=0, R=255, W=255, U=0, E=0)
+2022/03/20 14:57:36 - Unique rows 2.0 - Finished processing (I=0, O=0, R=255, W=30, U=0, E=0)
+2022/03/20 14:57:36 - Select values 3.0 - Finished processing (I=0, O=0, R=30, W=30, U=0, E=0)
+2022/03/20 14:56:10 - Kitchen - Start of run.
+2022/03/20 14:57:34 - automatizar_etl - Start of job execution
+2022/03/20 14:57:34 - automatizar_etl - Starting entry [Transformation]
+2022/03/20 14:57:34 - Transformation - Using run configuration [Pentaho local]
+2022/03/20 14:57:35 - Transformation - Running transformation using the Kettle execution engine
+2022/03/20 14:57:35 - proceso_etl_tiempo - Dispatching started for transformation [proceso_etl_tiempo]
+2022/03/20 14:57:36 - CSV file input.0 - Header row skipped in file 'C:\Users\Usuario\Documents\tesis-codigo (extendido)\ETL\tiempo_datos.csv'
+2022/03/20 14:57:36 - CSV file input.0 - Finished processing (I=2, O=0, R=0, W=1, U=0, E=0)
+2022/03/20 14:57:36 - indicador 2.0 - !TableInput.Log.FinishedReadingQuery!
+2022/03/20 14:57:36 - indicador.0 - !TableInput.Log.FinishedReadingQuery!
+2022/03/20 14:57:36 - indicador.0 - Finished processing (I=255, O=0, R=1, W=255, U=0, E=0)
+2022/03/20 14:57:36 - Calculator.0 - Finished processing (I=0, O=0, R=255, W=255, U=0, E=0)
+2022/03/20 14:57:36 - Select values.0 - Finished processing (I=0, O=0, R=255, W=255, U=0, E=0)
+2022/03/20 14:57:36 - Sort rows .0 - Finished processing (I=0, O=0, R=255, W=255, U=0, E=0)
+2022/03/20 14:57:36 - Unique rows 2.0 - Finished processing (I=0, O=0, R=255, W=30, U=0, E=0)
+2022/03/20 14:57:36 - Select values 3.0 - Finished processing (I=0, O=0, R=30, W=30, U=0, E=0)
+2022/03/20 14:57:36 - Carte - Installing timer to purge stale objects after 1440 minutes.
+2022/03/20 14:57:37 - automatizar_etl - Starting entry [Success]
+2022/03/20 14:57:37 - automatizar_etl - Finished job entry [Success] (result=[true])
+2022/03/20 14:57:37 - automatizar_etl - Finished job entry [Transformation] (result=[true])
+2022/03/20 14:57:37 - automatizar_etl - Job execution finished
+2022/03/20 14:57:37 - Kitchen - Finished!
+2022/03/20 14:57:37 - Kitchen - Start=2022/03/20 14:57:34.206, Stop=2022/03/20 14:57:37.443
+2022/03/20 14:57:37 - Kitchen - Processing ended after 3 seconds.

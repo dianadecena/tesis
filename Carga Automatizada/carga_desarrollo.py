@@ -8,16 +8,14 @@ def obtenerArchivos(ruta):
 			tipo_indicador = ruta.split("/")
 			path = ruta+fichero.name
 			mostrarErrores(path)
-			if tipo_indicador[8] == "Proyectos en Desarrollo":
+			if tipo_indicador[7] == "Proyectos en Desarrollo":
 				guardarDatos(1, 'desarrollo', path)
-			elif tipo_indicador[8] == "Proyectos Finalizados":
-				guardarCerrados(1, 'desarrollo', 'id_desarrollo', False, path)
-			elif tipo_indicador[8] == "Tickets Abiertos":
-				guardarDatosVar(1, 'desarrollo', path, 'id_ticket', 'ticket_des')
-			elif tipo_indicador[8] == "Tickets Cerrados":
-				guardarCerrados(1, 'desarrollo', 'id_desarrollo', True, path)
-			else:
-				guardarDatosVar(1, 'desarrollo', path, 'id_usuario', 'us_des')
+			elif tipo_indicador[7] == "Proyectos Finalizados":
+				guardarCerrados(1, 'desarrollo', False, path)
+			elif tipo_indicador[7] == "Tickets Abiertos":
+				guardarDatosVar(1, 'desarrollo', path, 'id_ticket', 'des_ticket')
+			elif tipo_indicador[7] == "Tickets Cerrados":
+				guardarCerrados(1, 'desarrollo', True, path)
 
 def mostrarErrores(path):
 	df = pd.read_excel(path)
@@ -81,9 +79,9 @@ def errorArchivo(tipo):
 		tipo_error = 'valores nulos y negativos y filas iguales'
 	print("Se detectó un error en el archivo: "+tipo_error) 
 
-nombres_indicadores = ["Proyectos en Desarrollo", "Proyectos Finalizados", "Tickets Abiertos", "Tickets Cerrados", "Satisfaccion Usuarios"]
+nombres_indicadores = ["Proyectos en Desarrollo", "Proyectos Finalizados", "Tickets Abiertos", "Tickets Cerrados"]
 
 for nombre in nombres_indicadores:
-	ruta = "/Users/Usuario/Documents/Tesis Diana 2021/Codigo/Datos de Prueba/Desarrollo/"+nombre+"/"
+	ruta = "/Users/Usuario/Documents/Tesis Diana 2021/Codigo/Indicadores de Desarrollo/"+nombre+"/"
 	obtenerArchivos(ruta)
 print("Los datos se han guardado correctamente en la base de datos") 

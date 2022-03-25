@@ -631,62 +631,62 @@
     <hop>
       <from>Select values 4</from>
       <to>proyectos_desarrollo</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Merge join 4</from>
       <to>Select values 5</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Merge join 2 2</from>
       <to>Select values 2 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Select values 5</from>
       <to>Sort rows 3 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort rows  3</from>
       <to>Merge join 4</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort rows  2 2</from>
       <to>Merge join 4</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort rows 3 2</from>
       <to>Merge join 2 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort rows 4 2</from>
       <to>Merge join 2 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>desarrollo 2</from>
       <to>Sort rows 4 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>ind-des 2</from>
       <to>Sort rows  3</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>indicador 2</from>
       <to>Sort rows  2 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Select values 2 2</from>
       <to>datos_proyectos</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
   </order>
   <step>
@@ -1062,7 +1062,6 @@
     <fields>
       <field>
         <name>id_dato</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -2131,7 +2130,7 @@
       <schema_name/>
     </partitioning>
     <connection>tesis_db</connection>
-    <sql>SELECT * FROM dato_indicador WHERE EXTRACT(MONTH FROM fecha) = 2
+    <sql>SELECT * FROM dato_indicador WHERE EXTRACT(MONTH FROM fecha) = 1
 AND EXTRACT(YEAR FROM fecha) = 2022;</sql>
     <limit>0</limit>
     <lookup/>
@@ -2303,7 +2302,7 @@ AND EXTRACT(YEAR FROM fecha) = 2022;</sql>
       <schema_name/>
     </partitioning>
     <connection>tesis_dw</connection>
-    <sql>SELECT * FROM tiempo_mensual WHERE id_mes = 2 AND year = 2022;</sql>
+    <sql>SELECT * FROM tiempo_mensual WHERE id_mes = 1 AND year = 2022;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
